@@ -65,6 +65,7 @@ namespace OpenWildsCombat
 
         public static void statDistro(List<int> arr, playerEntity player)
         {
+            int statChoice = 0;
             List<int> remainingStats = arr;
             Dictionary<string, int> mainStatsTemp = player.mainStats;
             List<string> stats = new List<string> {"Strength", "Dexterity", "Constitution", "Intellect", "Wisdom", "Charisma" };
@@ -96,14 +97,17 @@ namespace OpenWildsCombat
 
                 switch (menuChoiceText)
                 {
+
                     case "Strength":
                         bool allocated = false;
                         while (!allocated)
                         {
-                            Console.WriteLine("Which Stat would you like to allocate to Strength? ");
-                            Console.WriteLine(String.Join(", ", remainingStats));
-                            int statChoice;
-                            success = int.TryParse(Console.ReadLine(), out statChoice);
+                            if (statChoice == 0)
+                            {
+                                Console.WriteLine("Which Stat would you like to allocate to Strength? ");
+                                Console.WriteLine(String.Join(", ", remainingStats));
+                                success = int.TryParse(Console.ReadLine(), out statChoice);
+                            }
                             if (success == false)
                             {
                                 Console.WriteLine("");
@@ -119,10 +123,10 @@ namespace OpenWildsCombat
                             else
                             {
                                 player.mainStats["str"] = statChoice;
-                                int statIndex = remainingStats.IndexOf(statChoice);
-                                Console.WriteLine("Removing " + remainingStats[statIndex]);
-                                remainingStats.Remove(statIndex);
+                                remainingStats.Remove(statChoice);
                                 stats.Remove("Strength");
+                                statChoice = 0;
+                                Console.Clear();
                                 allocated = true;
                                 break;
                             }
@@ -133,10 +137,12 @@ namespace OpenWildsCombat
                         allocated = false;
                         while (!allocated)
                         {
-                            Console.WriteLine("Which Stat would you like to allocate to Dexterity? ");
-                            Console.WriteLine(String.Join(", ", remainingStats));
-                            int statChoice;
-                            success = int.TryParse(Console.ReadLine(), out statChoice);
+                            if (statChoice == 0)
+                            {
+                                Console.WriteLine("Which Stat would you like to allocate to Dexterity? ");
+                                Console.WriteLine(String.Join(", ", remainingStats));
+                                success = int.TryParse(Console.ReadLine(), out statChoice);
+                            }
                             if (success == false)
                             {
                                 Console.WriteLine("");
@@ -152,23 +158,24 @@ namespace OpenWildsCombat
                             else
                             {
                                 player.mainStats["dex"] = statChoice;
-                                int statIndex = remainingStats.IndexOf(statChoice);
-                                Console.WriteLine("Removing " + remainingStats[statIndex]);
-                                remainingStats.Remove(statIndex);
+                                remainingStats.Remove(statChoice);
                                 stats.Remove("Dexterity");
                                 allocated = true;
                                 break;
                             }
                         }
                         break;
+
                     case "Constitution":
                         allocated = false;
                         while (!allocated)
                         {
-                            Console.WriteLine("Which Stat would you like to allocate to Constitution? ");
-                            Console.WriteLine(String.Join(", ", remainingStats));
-                            int statChoice;
-                            success = int.TryParse(Console.ReadLine(), out statChoice);
+                            if (statChoice == 0)
+                            {
+                                Console.WriteLine("Which Stat would you like to allocate to Constitution? ");
+                                Console.WriteLine(String.Join(", ", remainingStats));
+                                success = int.TryParse(Console.ReadLine(), out statChoice);
+                            }
                             if (success == false)
                             {
                                 Console.WriteLine("");
@@ -184,23 +191,26 @@ namespace OpenWildsCombat
                             else
                             {
                                 player.mainStats["con"] = statChoice;
-                                int statIndex = remainingStats.IndexOf(statChoice);
-                                Console.WriteLine("Removing " + remainingStats[statIndex]);
-                                remainingStats.Remove(statIndex);
+                                remainingStats.Remove(statChoice);
                                 stats.Remove("Constitution");
+                                statChoice = 0;
+                                Console.Clear();
                                 allocated = true;
                                 break;
                             }
                         }
                         break;
+
                     case "Intellect":
                         allocated = false;
                         while (!allocated)
                         {
-                            Console.WriteLine("Which Stat would you like to allocate to Intellect? ");
-                            Console.WriteLine(String.Join(", ", remainingStats));
-                            int statChoice;
-                            success = int.TryParse(Console.ReadLine(), out statChoice);
+                            if (statChoice == 0)
+                            {
+                                Console.WriteLine("Which Stat would you like to allocate to Intellect? ");
+                                Console.WriteLine(String.Join(", ", remainingStats));
+                                success = int.TryParse(Console.ReadLine(), out statChoice);
+                            }
                             if (success == false)
                             {
                                 Console.WriteLine("");
@@ -216,23 +226,26 @@ namespace OpenWildsCombat
                             else
                             {
                                 player.mainStats["intel"] = statChoice;
-                                int statIndex = remainingStats.IndexOf(statChoice);
-                                Console.WriteLine("Removing " + remainingStats[statIndex]);
-                                remainingStats.Remove(statIndex);
+                                remainingStats.Remove(statChoice);
                                 stats.Remove("Intellect");
+                                statChoice = 0;
+                                Console.Clear();
                                 allocated = true;
                                 break;
                             }
                         }
                         break;
+
                     case "Wisdom":
                         allocated = false;
                         while (!allocated)
                         {
-                            Console.WriteLine("Which Stat would you like to allocate to Wisdom? ");
-                            Console.WriteLine(String.Join(", ", remainingStats));
-                            int statChoice;
-                            success = int.TryParse(Console.ReadLine(), out statChoice);
+                            if (statChoice == 0)
+                            {
+                                Console.WriteLine("Which Stat would you like to allocate to Wisdom? ");
+                                Console.WriteLine(String.Join(", ", remainingStats));
+                                success = int.TryParse(Console.ReadLine(), out statChoice);
+                            }
                             if (success == false)
                             {
                                 Console.WriteLine("");
@@ -248,23 +261,27 @@ namespace OpenWildsCombat
                             else
                             {
                                 player.mainStats["wis"] = statChoice;
-                                int statIndex = remainingStats.IndexOf(statChoice);
-                                Console.WriteLine("Removing " + remainingStats[statIndex]);
-                                remainingStats.Remove(statIndex);
+                                remainingStats.Remove(statChoice);
                                 stats.Remove("Wisdom");
+                                statChoice = 0;
+                                Console.Clear();
                                 allocated = true;
                                 break;
                             }
                         }
                         break;
+
                     case "Charisma":
                         allocated = false;
                         while (!allocated)
                         {
-                            Console.WriteLine("Which Stat would you like to allocate to Charisma? ");
-                            Console.WriteLine(String.Join(", ", remainingStats));
-                            int statChoice;
-                            success = int.TryParse(Console.ReadLine(), out statChoice);
+                            if (statChoice == 0)
+                            {
+                                Console.WriteLine("Which Stat would you like to allocate to Charisma? ");
+                                Console.WriteLine(String.Join(", ", remainingStats));
+                                success = int.TryParse(Console.ReadLine(), out statChoice);
+                            }
+
                             if (success == false)
                             {
                                 Console.WriteLine("");
@@ -279,11 +296,11 @@ namespace OpenWildsCombat
                             }
                             else
                             {
-                                player.mainStats["Cha"] = statChoice;
-                                int statIndex = remainingStats.IndexOf(statChoice);
-                                Console.WriteLine("Removing " + remainingStats[statIndex] + " at position " + (statIndex + 1));
-                                remainingStats.Remove(statIndex);
+                                player.mainStats["cha"] = statChoice;
+                                remainingStats.Remove(statChoice);
                                 stats.Remove("Charisma");
+                                statChoice = 0;
+                                Console.Clear();
                                 allocated = true;
                                 break;
                             }
@@ -291,14 +308,8 @@ namespace OpenWildsCombat
                         break;
                     default:
                         break;
-
-
                 }
-
-
             }
-            
-        }
-
+        }   
     }
 }

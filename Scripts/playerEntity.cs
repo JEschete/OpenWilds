@@ -18,6 +18,7 @@ namespace OpenWildsCombat
         {
             Console.WriteLine("Hello Adventure, what is your name ? ");
             name = Console.ReadLine();
+            Console.WriteLine();
 
         }
 
