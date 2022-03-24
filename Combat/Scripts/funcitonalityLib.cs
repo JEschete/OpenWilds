@@ -67,6 +67,8 @@ namespace OpenWildsCombat
         {
             int statChoice = 0;
             List<int> remainingStats = arr;
+            int menuChoiceNum;
+            string menuChoiceText;
             Dictionary<string, int> mainStatsTemp = player.mainStats;
             List<string> stats = new List<string> {"Strength", "Dexterity", "Constitution", "Intellect", "Wisdom", "Charisma" };
 
@@ -81,15 +83,13 @@ namespace OpenWildsCombat
                 {
                     Console.WriteLine((i + 1) + ". " + stats[i]);
                 }
-
-                int menuChoiceNum;
-                string menuChoiceText;
                 bool success = int.TryParse(Console.ReadLine(), out menuChoiceNum);
                 if (success == false)
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Please enter a valid choice. ");
                     Console.WriteLine("");
+                    menuChoiceNum = 0;
                 }
                 Console.WriteLine("");
 

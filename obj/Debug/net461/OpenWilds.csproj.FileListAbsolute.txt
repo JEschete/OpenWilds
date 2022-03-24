@@ -1,0 +1,9 @@
+C:\Users\jeschete\Documents\projects\OpenWilds\bin\Debug\net461\OpenWilds.runtimeconfig.json
+C:\Users\jeschete\Documents\projects\OpenWilds\bin\Debug\net461\OpenWilds.runtimeconfig.dev.json
+C:\Users\jeschete\Documents\projects\OpenWilds\bin\Debug\net461\OpenWilds.exe
+C:\Users\jeschete\Documents\projects\OpenWilds\bin\Debug\net461\OpenWilds.pdb
+C:\Users\jeschete\Documents\projects\OpenWilds\obj\Debug\net461\OpenWilds.csprojAssemblyReference.cache
+C:\Users\jeschete\Documents\projects\OpenWilds\obj\Debug\net461\OpenWilds.csproj.CoreCompileInputs.cache
+C:\Users\jeschete\Documents\projects\OpenWilds\obj\Debug\net461\OpenWilds.AssemblyInfo.cs
+C:\Users\jeschete\Documents\projects\OpenWilds\obj\Debug\net461\OpenWilds.exe
+C:\Users\jeschete\Documents\projects\OpenWilds\obj\Debug\net461\OpenWilds.pdb
