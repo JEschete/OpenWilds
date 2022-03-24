@@ -10,21 +10,21 @@ namespace OpenWildsCombat
     {
         static void Main(string[] args)
         {
-            playerEntity player1 = new playerEntity();
+            playerEntity player1 = funcLib.BuildPlayer();
 
-            player1.SetName();
             Console.WriteLine();
-            funcLib.MeanStatGenerator(player1);
+
+            
 
             Console.WriteLine("Well met " + player1.GetName() + " welcome to the wilds. ");
-            Console.ReadLine();
-            Console.WriteLine(" It seems your stats are as such: ");
-            Console.WriteLine(" Str: " + player1.getStat(0));
-            Console.WriteLine(" Dex: " + player1.getStat(1));
-            Console.WriteLine(" Con: " + player1.getStat(2));
-            Console.WriteLine(" Int: " + player1.getStat(3));
-            Console.WriteLine(" Wis: " + player1.getStat(4));
-            Console.WriteLine(" Cha: " + player1.getStat(5));
+            Console.WriteLine();
+            Console.WriteLine(" It seems your available stats are as such: ");
+            Console.WriteLine(" Str: " + player1.getStat("str"));
+            Console.WriteLine(" Dex: " + player1.getStat("dex"));
+            Console.WriteLine(" Con: " + player1.getStat("con"));
+            Console.WriteLine(" Int: " + player1.getStat("intel"));
+            Console.WriteLine(" Wis: " + player1.getStat("wis"));
+            Console.WriteLine(" Cha: " + player1.getStat("cha"));
 
         }
     }

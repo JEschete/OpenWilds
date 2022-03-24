@@ -10,7 +10,7 @@ namespace OpenWildsCombat
     public class playerEntity : Entities
     {
         int playerLevel;
-        public string? GetName()
+        public string GetName()
         {
             return name;
         }
@@ -21,7 +21,7 @@ namespace OpenWildsCombat
 
         }
 
-        public int getStat(int i)
+        public int getStat(string i)
         {
             return mainStats[i];
         }
