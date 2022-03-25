@@ -1,0 +1,15 @@
+D:\Projects\OpenWilds\bin\Debug\net6.0\OpenWilds.exe
+D:\Projects\OpenWilds\bin\Debug\net6.0\OpenWilds.deps.json
+D:\Projects\OpenWilds\bin\Debug\net6.0\OpenWilds.runtimeconfig.json
+D:\Projects\OpenWilds\bin\Debug\net6.0\OpenWilds.dll
+D:\Projects\OpenWilds\bin\Debug\net6.0\OpenWilds.pdb
+D:\Projects\OpenWilds\obj\Debug\net6.0\OpenWilds.csproj.AssemblyReference.cache
+D:\Projects\OpenWilds\obj\Debug\net6.0\OpenWilds.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\OpenWilds\obj\Debug\net6.0\OpenWilds.AssemblyInfoInputs.cache
+D:\Projects\OpenWilds\obj\Debug\net6.0\OpenWilds.AssemblyInfo.cs
+D:\Projects\OpenWilds\obj\Debug\net6.0\OpenWilds.csproj.CoreCompileInputs.cache
+D:\Projects\OpenWilds\obj\Debug\net6.0\OpenWilds.dll
+D:\Projects\OpenWilds\obj\Debug\net6.0\refint\OpenWilds.dll
+D:\Projects\OpenWilds\obj\Debug\net6.0\OpenWilds.pdb
+D:\Projects\OpenWilds\obj\Debug\net6.0\OpenWilds.genruntimeconfig.cache
+D:\Projects\OpenWilds\obj\Debug\net6.0\ref\OpenWilds.dll

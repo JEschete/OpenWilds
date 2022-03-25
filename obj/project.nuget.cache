@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "t+AbWfNae1mL79qCfGT8R6Wwl50Lmm+R6HvidfRuvrUOwWER3V8Sq9KKPjOJkuhCApdV4Hcdf0EOIfQl9w4NJg==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\OpenWilds\\OpenWilds.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jude\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+    "C:\\Users\\Jude\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
+    "C:\\Users\\Jude\\.nuget\\packages\\newtonsoft.json\\6.0.4\\newtonsoft.json.6.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
