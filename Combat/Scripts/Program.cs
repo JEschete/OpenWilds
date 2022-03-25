@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OpenWildsCombat
+﻿namespace OpenWildsCombat
 {
     class Program
     {
@@ -14,7 +8,7 @@ namespace OpenWildsCombat
 
             Console.WriteLine();
 
-            
+
 
             Console.WriteLine("Well met " + player1.GetName() + " welcome to the wilds. ");
             Console.WriteLine();
