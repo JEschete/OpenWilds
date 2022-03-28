@@ -1,4 +1,6 @@
-﻿namespace OpenWildsCombat
+﻿using System;
+
+namespace OpenWildsCombat
 {
     class Program
     {

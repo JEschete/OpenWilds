@@ -1,4 +1,6 @@
-﻿namespace OpenWildsCombat
+﻿using System.Collections.Generic;
+
+namespace OpenWildsCombat
 {
     public abstract class Entities
     {

@@ -1,4 +1,6 @@
-﻿namespace OpenWildsCombat
+﻿using System;
+
+namespace OpenWildsCombat
 {
     public class playerEntity : Entities
     {
@@ -18,6 +20,11 @@
         public int getStat(string i)
         {
             return mainStats[i];
+        }
+
+        public void setStat(int x, string y)
+        {
+            mainStats[y] = x;
         }
 
     }
