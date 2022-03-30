@@ -6,11 +6,11 @@ namespace OpenWildsCombat
     {
         static void Main(string[] args)
         {
+
+
             playerEntity player1 = funcLib.BuildPlayer();
 
             Console.WriteLine();
-
-
 
             Console.WriteLine("Well met " + player1.GetName() + " welcome to the wilds. ");
             Console.WriteLine();
@@ -21,6 +21,10 @@ namespace OpenWildsCombat
             Console.WriteLine(" Int: " + player1.getStat("intel"));
             Console.WriteLine(" Wis: " + player1.getStat("wis"));
             Console.WriteLine(" Cha: " + player1.getStat("cha"));
+
+
+            Console.WriteLine("Press enter to quit. ");
+            Console.ReadLine();
 
         }
     }

@@ -4,7 +4,9 @@ namespace OpenWildsCombat
 {
     public class playerEntity : Entities
     {
-        int playerLevel;
+
+        // int playerLevel;
+        // dictionary 
         public string GetName()
         {
             return name;
