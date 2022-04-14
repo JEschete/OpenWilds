@@ -22,3 +22,7 @@ D:\Projects\OpenWilds\bin\Debug\net461\Newtonsoft.Json.dll
 D:\Projects\OpenWilds\obj\Debug\net461\OpenWilds.csproj.CopyComplete
 D:\Projects\OpenWilds\obj\Debug\net461\OpenWilds.exe
 D:\Projects\OpenWilds\obj\Debug\net461\OpenWilds.pdb
+C:\Users\jeschete\Documents\projects\OpenWilds\bin\Debug\net461\System.Net.Http.Formatting.dll
+C:\Users\jeschete\Documents\projects\OpenWilds\bin\Debug\net461\System.Web.Http.dll
+C:\Users\jeschete\Documents\projects\OpenWilds\bin\Debug\net461\Newtonsoft.Json.dll
+C:\Users\jeschete\Documents\projects\OpenWilds\obj\Debug\net461\OpenWilds.csproj.CopyComplete

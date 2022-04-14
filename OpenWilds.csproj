@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <StartupObject>OpenWildsCombat.Program</StartupObject>
-	<LangVersion>preview</LangVersion>
+
   </PropertyGroup>
 
   <ItemGroup>

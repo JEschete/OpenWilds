@@ -1,10 +1,13 @@
-﻿namespace OpenWildsCombat
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+
+namespace OpenWildsCombat
 
 {
     public class funcLib
     {
-
-        // Take what you get generator
 
         public static List<int> StatAllocateGenerator()
         {
@@ -52,8 +55,11 @@
             player.mainStats.Add("cha", 0);
 
             player.SetName();
-            List<int> statArr = StatAllocateGenerator();
-            statDistro(statArr, player);
+
+            stateAllocateMenu(player);
+
+
+            // statBuy(player);
 
             return player;
         }
@@ -74,6 +80,7 @@
                 switch (menuState)
                 {
                     case 0:
+                        Console.Clear();
                         Console.WriteLine("You have the following stat values left to allocate");
                         Console.WriteLine(String.Join(", ", remainingStats));
                         Console.WriteLine();
@@ -123,12 +130,14 @@
                                         success = int.TryParse(Console.ReadLine(), out statChoice);
                                         if (success == false)
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("");
                                             Console.WriteLine("Please enter a valid choice. ");
                                             Console.WriteLine("");
                                         }
                                         else if (!remainingStats.Contains(statChoice))
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("Please enter only a value from the list of stats");
                                             Console.WriteLine("Remaining stats: " + String.Join(", ", remainingStats));
                                             success = int.TryParse(Console.ReadLine(), out statChoice);
@@ -160,12 +169,14 @@
                                         success = int.TryParse(Console.ReadLine(), out statChoice);
                                         if (success == false)
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("");
                                             Console.WriteLine("Please enter a valid choice. ");
                                             Console.WriteLine("");
                                         }
                                         else if (!remainingStats.Contains(statChoice))
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("Please enter only a value from the list of stats");
                                             Console.WriteLine("Remaining stats: " + String.Join(", ", remainingStats));
                                             success = int.TryParse(Console.ReadLine(), out statChoice);
@@ -197,12 +208,14 @@
                                         success = int.TryParse(Console.ReadLine(), out statChoice);
                                         if (success == false)
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("");
                                             Console.WriteLine("Please enter a valid choice. ");
                                             Console.WriteLine("");
                                         }
                                         else if (!remainingStats.Contains(statChoice))
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("Please enter only a value from the list of stats");
                                             Console.WriteLine("Remaining stats: " + String.Join(", ", remainingStats));
                                             success = int.TryParse(Console.ReadLine(), out statChoice);
@@ -235,12 +248,14 @@
 
                                         if (success == false)
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("");
                                             Console.WriteLine("Please enter a valid choice. ");
                                             Console.WriteLine("");
                                         }
                                         else if (!remainingStats.Contains(statChoice))
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("Please enter only a value from the list of stats");
                                             Console.WriteLine("Remaining stats: " + String.Join(", ", remainingStats));
                                             success = int.TryParse(Console.ReadLine(), out statChoice);
@@ -272,12 +287,14 @@
                                         success = int.TryParse(Console.ReadLine(), out statChoice);
                                         if (success == false)
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("");
                                             Console.WriteLine("Please enter a valid choice. ");
                                             Console.WriteLine("");
                                         }
                                         else if (!remainingStats.Contains(statChoice))
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("Please enter only a value from the list of stats");
                                             Console.WriteLine("Remaining stats: " + String.Join(", ", remainingStats));
                                             success = int.TryParse(Console.ReadLine(), out statChoice);
@@ -309,12 +326,14 @@
                                         success = int.TryParse(Console.ReadLine(), out statChoice);
                                         if (success == false)
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("");
                                             Console.WriteLine("Please enter a valid choice. ");
                                             Console.WriteLine("");
                                         }
                                         else if (!remainingStats.Contains(statChoice))
                                         {
+                                            Console.Clear();
                                             Console.WriteLine("Please enter only a value from the list of stats");
                                             Console.WriteLine("Remaining stats: " + String.Join(", ", remainingStats));
                                             success = int.TryParse(Console.ReadLine(), out statChoice);
@@ -351,5 +370,174 @@
                 }
             }
         }
+
+        public static void statBuy(playerEntity player)
+        {
+            List<string> stats = new List<string> { "str", "dex", "con", "intel", "wis", "cha" };
+            int maxPoints = 27;
+            int pointsSpent = 0;
+            int pointAmount;
+            int statChoice;
+            player.mainStats["str"] = 8;
+            player.mainStats["dex"] = 8;
+            player.mainStats["con"] = 8;
+            player.mainStats["wis"] = 8;
+            player.mainStats["intel"] = 8;
+            player.mainStats["cha"] = 8;
+
+            bool done = false;
+            bool statsDone = false;
+
+            while (statsDone != true)
+            {
+                if (maxPoints != pointsSpent)
+                {
+                    done = false;
+                    Console.WriteLine();
+                    Console.WriteLine("You have " + (maxPoints - pointsSpent) + " points left to spend. ");
+                    Console.WriteLine("Which ability would you like to increase? (No skill can be brought above 15 as a base with point buy) ");
+                    for (int i = 0; i < stats.Count; i++)
+                    {
+                        Console.WriteLine((i + 1) + ". " + stats[i]);
+                    }
+                    bool success = int.TryParse(Console.ReadLine(), out statChoice);
+                    statChoice = statChoice - 1;
+                    switch (success)
+                    {
+                        case true:
+                            if (statChoice >= 0 && statChoice < stats.Count)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("You have " + (maxPoints - pointsSpent) + " points remaining.");
+                                Console.WriteLine("Please enter a positive or negative amount of points. You cannot remove points to go under 8 points in any give stat.");
+                                bool success2 = int.TryParse(Console.ReadLine(), out pointAmount);
+                                if (success2 == true && pointAmount <= (maxPoints - pointsSpent))
+                                {
+                                    if ((pointAmount + player.getStat(stats[statChoice]) <= 15 && (pointAmount + player.getStat(stats[statChoice])) >= 8))
+                                    {
+                                        int statPass = pointAmount + player.getStat(stats[statChoice]);
+                                        player.setStat(statPass, stats[statChoice]);
+                                        pointsSpent += pointAmount;
+                                        break;
+                                    }
+                                    Console.Clear();
+                                    Console.WriteLine("Please make a valid choice from the menu options");
+                                    success = false;
+                                    break;
+                                }
+
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Please make a valid choice from the menu options");
+                                success = false;
+                                break;
+                            }
+                            break;
+                        case false:
+                            Console.Clear();
+                            Console.WriteLine("Please make a valid choice from the menu options");
+                            success = false;
+                            break;
+                    }
+                }
+                else if (maxPoints == pointsSpent)
+                {
+                    while (done != true)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("You have spent all of your points. These are your stats: ");
+                        Console.WriteLine(" Str: " + player.getStat("str"));
+                        Console.WriteLine(" Dex: " + player.getStat("dex"));
+                        Console.WriteLine(" Con: " + player.getStat("con"));
+                        Console.WriteLine(" Int: " + player.getStat("intel"));
+                        Console.WriteLine(" Wis: " + player.getStat("wis"));
+                        Console.WriteLine(" Cha: " + player.getStat("cha"));
+
+                        Console.WriteLine();
+                        Console.WriteLine("Is this okay?");
+                        Console.WriteLine("1.) Yes ");
+                        Console.WriteLine("2.) No (resets points)");
+                        bool contChoice = int.TryParse(Console.ReadLine(), out int contNum);
+                        if (contChoice == true)
+                        {
+                            switch (contNum)
+                            {
+                                case 1:
+                                    done = true;
+                                    statsDone = true;
+                                    break;
+                                case 2:
+                                    pointsSpent = 0;
+                                    player.mainStats["str"] = 8;
+                                    player.mainStats["dex"] = 8;
+                                    player.mainStats["con"] = 8;
+                                    player.mainStats["wis"] = 8;
+                                    player.mainStats["intel"] = 8;
+                                    player.mainStats["cha"] = 8;
+                                    done = true;
+                                    break;
+                                default:
+                                    Console.WriteLine("Please Enter a valid choice. ");
+                                    Console.WriteLine();
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please Enter a valid choice. ");
+                            Console.WriteLine();
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void stateAllocateMenu(playerEntity player)
+        {
+            bool done = false;
+            while (done == false)
+            {
+                Console.Clear();
+                Console.WriteLine("How would you like to allocate your stats? ");
+                Console.WriteLine("1.) Rolled stats that you can place as you see fit? ");
+                Console.WriteLine("2.) Pointbuy System? ");
+                bool success = int.TryParse(Console.ReadLine(), out int menuChoice);
+               if (success == true)
+                {
+                        switch (menuChoice)
+                        {
+                            case 1:
+                                List<int> statArr = StatAllocateGenerator();
+                                statDistro(statArr, player);
+                                done = true;
+                                break;
+
+                            case 2:
+                                statBuy(player);
+                                done = true;
+                                break;
+
+                            default:
+                                Console.Clear();
+                                Console.WriteLine("Please enter a valid choice. ");
+                                Console.WriteLine("1.) Rolled stats that you can place as you see fit? ");
+                                Console.WriteLine("2.) Pointbuy System? ");
+                                success = int.TryParse(Console.ReadLine(), out menuChoice);
+                                break;
+                        }
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("How would you like to allocate your stats? ");
+                    Console.WriteLine("1.) Rolled stats that you can place as you see fit? ");
+                    Console.WriteLine("2.) Pointbuy System? ");
+                    success = int.TryParse(Console.ReadLine(), out menuChoice);
+                }
+            }
+         }
     }
 }

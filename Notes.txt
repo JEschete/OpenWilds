@@ -1,0 +1,34 @@
+﻿Class System
+What does the class determine about the player?
+It determines the: 
+ - Features
+ - Resource type
+ - How hitpoints are determined 
+ - Armor Proficiency
+ - Weapon Proficiency
+ - Tool Proficiency
+ - Saving throw proficiency
+ - Available skills
+ - Starting Equipment
+ - Can the player cast, and if so what spells do they have available? 
+ - Subclasses available
+
+Race
+What does race determine about the player? 
+ - Ability Score Increases
+ - Size
+ - Movement
+ - Racial Bonuses (Draconic Ancestry giving a breath weapon)
+ - Resistances
+
+Stat System
+What do the player stats determine? 
+ - HP
+ - AC
+ - Modifiers
+ - Proficiency Bonuses
+ - Initiative
+  
+Multiclassing
+What are the Benefits? 
+What are the Drawbacks? 
